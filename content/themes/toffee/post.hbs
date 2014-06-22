@@ -1,0 +1,68 @@
+{{!< default}}
+
+<header class="site-header">
+    <div class="container">
+        {{> navigation}}
+
+        {{#if @blog.logo}}
+            <a class="site-logo" title="{{@blog.title}}" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+        {{else}}
+            <h1 class="site-title"><a title="{{@blog.title}}" href="{{@blog.url}}">{{@blog.title}}</a></h1>
+        {{/if}}
+    </div>
+</header>
+
+<div class="content-primary">
+    <div class="container clearfix">
+        {{#post}}
+            <article class="{{post_class}}">
+                <header class="post-header">
+                    <div class="post-meta">
+                        <span class="post-date">{{date format="MMMM Do YYYY"}}</span>
+                    </div>
+
+                    <h1 class="post-title">{{title}}</h1>
+                </header>
+
+                <div class="post-content js-post-content">
+                    {{content}}
+                </div>
+
+                <!-- <footer class="post-stub-footer">
+
+                    {{! ################################################### }}
+                    {{! Add your Disqus comments code here }}
+                    {{! ################################################### }}
+
+                </footer> -->
+            </article>
+
+            <div class="sidebar">
+                <aside class="widget widget-author">
+                    <header class="widget-author-header">
+                        <img class="widget-author-avatar" src="{{author.image}}" alt="{{author.name}}" />
+
+                        <h4 class="widget-author-name">{{author.name}}</h4>
+
+                        <span class="widget-author-location">{{author.location}}</span>
+                    </header>
+
+                    <div class="widget-content">
+                        <p>{{author.bio}}</p>
+                    </div>
+                </aside>
+
+                <!-- <aside class="widget">
+                    <div class="widget-content">
+                        <h4 class="widget-title">Follow Us On Twitter</h4>
+
+                        {{! ################################################### }}
+                        {{! Add your Twitter widget code here }}
+                        {{! ################################################### }}
+
+                    </div>
+                </aside> -->
+            </div>
+        {{/post}}
+    </div>
+</div>

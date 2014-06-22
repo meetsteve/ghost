@@ -1,0 +1,61 @@
+{{!< default}}
+
+<header class="site-header">
+    <div class="container">
+        {{> navigation}}
+
+        {{#if @blog.logo}}
+            <a class="site-logo" title="{{@blog.title}}" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+        {{else}}
+            <h1 class="site-title"><a title="{{@blog.title}}" href="{{@blog.url}}">{{@blog.title}}</a></h1>
+        {{/if}}
+
+        {{#if tag}}
+            <h2 class="site-description">Posts tagged: {{tag.name}}</h2>
+        {{else}}
+            <h2 class="site-description">{{@blog.description}}</h2>
+        {{/if}}
+    </div>
+</header>
+
+<div class="content-primary">
+    <div class="container clearfix">
+        <div class="posts-container js-posts-container clearfix">
+            {{#foreach posts}}
+                <article class="{{post_class}} post-stub">
+                    <div class="post-feature">
+                        <a href="{{url}}">
+                            {{content words="0"}}
+
+                            <div class="post-feature-overlay"></div>
+                        </a>
+                    </div>
+
+                    <header class="post-header">
+                        <div class="post-stub-meta">
+                            <span class="post-date">{{date format="MMMM Do YYYY"}}</span>
+                        </div>
+
+                        <h1 class="post-stub-title"><a href="{{url}}">{{title}}</a></h1>
+                    </header>
+
+                    <div class="post-content">
+                        <p>{{excerpt characters=230}}...</p>
+                    </div>
+
+                    <footer class="post-stub-footer">
+                        {{#if tags}}
+                            <p class="post-tags">{{tags}}</p>
+                        {{/if}}
+
+                        <a class="post-link" href="{{url}}">&#xf14c;</a>
+                    </footer>
+                </article>
+            {{/foreach}}
+        </div>
+
+        {{pagination}}
+
+        <a href="#" class="load-more-posts js-load-more-posts">Load More</a>
+    </div>
+</div>

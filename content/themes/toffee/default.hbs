@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if IE 7]> <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    {{! Document Settings }}
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{! Styles }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic|Roboto+Slab:700' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="/assets/css/ie.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"></script>
+    <![endif]-->
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+
+    {{! ################################################### }}
+    {{! Add your Google Analytics code here }}
+    {{! ################################################### }}
+
+</head>
+<body class="{{body_class}} no-js">
+
+    {{{body}}}
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="icon-menu">
+                <a title="{{@blog.title}} on Twitter" href="#">&#xf081;</a>
+                <a title="{{@blog.title}} on Github" href="#">&#xf092;</a>
+                <a title="{{@blog.title}} RSS Feed" href="{{@blog.url}}/rss">&#xf143;</a>
+            </div>
+
+            <p class="footer-copyright"><a title="{{@blog.title}}" href="{{@blog.url}}">{{@blog.title}}</a> © {{date format="YYYY"}} / Powered by <a href="http://tryghost.org" title="Ghost">Ghost</a> / <a href="http://jollygoodthemes.com" title="Toffee Theme" />Toffee Theme</a> by <a href="http://jollygoodthemes.com" title="JollyGoodThemes">JollyGoodThemes</a></p>
+        </div>
+    </footer>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    <script type="text/javascript" src="{{asset "js/masonry.pkgd.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/imagesloaded.pkgd.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/scripts.js"}}"></script>
+
+</body>
+</html>
